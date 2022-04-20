@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/libraryApp/steps_definitions",
         dryRun = false,
-        tags = "@wip",
+        tags = "@1",
         publish = false
 )
 

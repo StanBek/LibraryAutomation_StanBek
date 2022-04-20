@@ -1,10 +1,8 @@
-
+@1
 Feature: As a data consumer, I want the user information are stored in mySql DB correctly in users table.
 
-#Background: If we can start without given we can delete background
-#Given Establish the database connection
-@wip
   Scenario: verify users has unique IDs
+
     When Execute query to get all IDs from users
     Then verify all users has unique ID
 

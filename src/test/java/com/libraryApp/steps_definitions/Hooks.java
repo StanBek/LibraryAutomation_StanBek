@@ -16,9 +16,13 @@ public class Hooks {
 
   @Before
     public void setupPage() {
-    DBUtils.createConnection();
-    //PagesInitializer.initializePageObjects();
-    }
+      String url = ConfigurationReader.getProperty("dbURL");
+      String username = ConfigurationReader.getProperty("dbUser");
+      String password = ConfigurationReader.getProperty("dbPass");
+      DBUtils.createConnection(url, username, password);
+
+     // PagesInitializer.initializePageObjects();
+  }
 
     @After
     public void tearDown(Scenario scenario){
@@ -28,6 +32,6 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
         DBUtils.closeConnection();
-       Driver.close();
+     //  Driver.close();
     }
 }

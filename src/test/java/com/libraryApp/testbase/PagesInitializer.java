@@ -1,20 +1,23 @@
 package com.libraryApp.testbase;
 
 
+import com.libraryApp.pages.DashBoardPage;
+import com.libraryApp.pages.LoginPage;
+
 /**
  * This an initializer class which will initialize all pages classes. Once pages
  * class created, create an object of it here inside the constructor
  */
 public class PagesInitializer {
 
-	/*protected static MainPage mainPage;
-	protected static LandingPage landingPage;
+	protected static LoginPage loginPage;
+	protected static DashBoardPage dashBoardPage;
 
-	public static void initializePageObjects() {
-		mainPage = new MainPage();
-		landingPage=new LandingPage();
+static {
+		loginPage = new LoginPage();
+		dashBoardPage=new DashBoardPage();
 	}
 
-	 */
+
 
 }

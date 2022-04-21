@@ -9,15 +9,13 @@ public class ConfigurationReader {
 
     private static Properties properties = new Properties();
 
-    public static void readProperties(String filePath) {
+    static {
         try {
-            FileInputStream file = new FileInputStream(filePath);
+            FileInputStream file = new FileInputStream("configuration.properties");
             properties.load(file);
             file.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found in the ConfigurationReader class.");
-            e.printStackTrace();
         } catch (IOException e) {
+            System.out.println("Filed not found in Configuration Reader class");
             e.printStackTrace();
         }
     }
@@ -25,10 +23,4 @@ public class ConfigurationReader {
     public static String getProperty(String keyword){
         return properties.getProperty(keyword);
     }
-
-    public static int getPropertyNumber(String keyword){
-        int r = Integer.parseInt(keyword);
-        return r;
-    }
-
 }
